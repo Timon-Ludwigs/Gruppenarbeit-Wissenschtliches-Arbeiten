@@ -42,7 +42,7 @@ data <- data.frame(ID, Alter, Fach, Interesse_an_Mathematik, Interesse_an_Progra
 getwd()
 
 ### Datensatz als .csv speichern
-write.csv(Datensatz,"Datensatz.csv", row.names = FALSE)
+write.csv(data,"Datensatz.csv", row.names = FALSE)
 
 
 
