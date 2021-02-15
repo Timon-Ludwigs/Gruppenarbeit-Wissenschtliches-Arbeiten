@@ -77,4 +77,4 @@ for(i in 1:100)
 #Variablen als Datensatz erstellen
 Datensatz <- data.frame(ID, Alter, Fach, MatheInteresse, InfoInteresse, MatheLK)
 
-write.csv2(data, file = "data_Gruppenarbeit.csv")
+write.csv2(Datensatz, file = "Datensatz.csv")
