@@ -1,5 +1,14 @@
 # Gruppenarbeit-Wissenschtliches-Arbeiten
 Gruppenarbeit für Wissenschaftliches Arbeiten
 
+GitHub-Übungsaufgabe
 
-Hier schreiben wir noch Informationen hinein ;-)
+Teammitglieder:
+Joshua,
+Niruban,
+Melissa,
+Timon,
+Josepha
+
+
+
