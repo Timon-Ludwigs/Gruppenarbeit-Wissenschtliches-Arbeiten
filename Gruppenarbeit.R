@@ -58,7 +58,7 @@ pIMathe <- c(0.45/4,0.45/4,0.45/4,0.45/4,0.1,0.2,0.25)
 #W'keit Interesse an Mathe wenn Fach="Statistik"
 pIStatistik <- c(0.5/4,0.5/4,0.5/4,0.5/4,0.1,0.2,0.2)
 
-#leeren Vektor mit zufälligem Interesse für jeden Studiengang
+#leerer Vektor mit zufälligem Interesse für jeden Studiengang
 set.seed(2411)
 InfoInteresse[which(Fach=="Statistik")] <- sample(Interesse,1,prob=pIStatistik)
 InfoInteresse[which(Fach=="DataScience")] <- sample(Interesse,1,prob=pIDataScience)
@@ -77,4 +77,4 @@ for(i in 1:100)
 #Variablen als Datensatz erstellen
 Datensatz <- data.frame(ID, Alter, Fach, MatheInteresse, InfoInteresse, MatheLK)
 
-write.csv2(Datensatz, file = "Datensatz.csv")
+write.csv(Datensatz, file = "Datensatz.csv", row.names=FALSE)
