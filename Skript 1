@@ -42,27 +42,29 @@ return(data.frame("Minimum"=min,"Maximum"=max,"Mittelwert"=ari,"Median"=med,"Var
 
 # mit count als Hilfsfunktion in Skript2
 
-func_e <- function(x){
-  res <- list()
-  res$niedrig <- count(x, quantile(x, 0.25))
-  res$mittel <- count(x, quantile(x, 0.75)) - count(x, quantile(x, 0.25))
-  res$hoch <- count(x, quantile(x, 1)) - count(x, quantile(x, 0.75))
-  return(res)
+func_e <- function(x){ # x ist ein numerischer Vektor 
+  res <- list() # erzeugt eine Liste mit dem Namen res
+  res$niedrig <- count(x, quantile(x, 0.25)) # berechnet die Anzahl der 25% kleinsten Werte
+  res$mittel <- count(x, quantile(x, 0.75)) - count(x, quantile(x, 0.25)) # berechnet die Anzahl der Werte zwischen 25% und 75%
+  res$hoch <- count(x, quantile(x, 1)) - count(x, quantile(x, 0.75)) # berechnet die Anzahl der groessten Werte, also alle ueber 75%
+  return(res) # gibt die Liste zurueck
 }
 
 
 
 #f)
 
-func_f <- function(x, y, z, v = 0){
-  if(v == 0){
-    par(mfrow=c(3,1))
+func_f <- function(x, y, z, v = 0){ # alle Parameter sind Variablen aus dem Datensatz. v wird als default auf 0 gesetzt. Falls nun 4 Variablen genutzt werden sollen, wird v auf die entsprechende Variable gesetzt
+  if(v == 0){ # prueft, ob fuer v eine Variable uebergeben wurde und fuehrt die nachfolgenden Zeilen aus, falls dies nicht so ist
+    par(mfrow=c(3,1)) # Erzeugt drei barplots, die untereinander stehen
+    # im folgenden werden die Barplots fuer die Variablen berechnet
     barplot(table(x))
     barplot(table(y))
     barplot(table(z))
   }
-  else{
-    par(mfrow=c(2,2))
+  else{ # falls fuer v ein anderer Wert als 0, also eine Variable uebergeben wurde werden die Nachfolgenden Zeilen ausgefuehrt
+    par(mfrow=c(2,2)) # Erzeugt vier barplots, die im 2 x 2 angeordnet sind
+    # im folgenden werden die Barplots fuer die Variablen berechnet
     barplot(table(x))
     barplot(table(y))
     barplot(table(z))
