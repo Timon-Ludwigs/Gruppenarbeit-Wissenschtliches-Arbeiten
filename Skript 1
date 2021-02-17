@@ -19,15 +19,71 @@ return(data.frame("Minimum"=min,"Maximum"=max,"Mittelwert"=ari,"Median"=med,"Var
 
 #b)
 
+# desk_kategorical - Diese Funktion berechnet zwei 
+#verschiedene deskriptive Statistiken
+#für kategoriale Variablen.
 
+###################Input######################## 
+
+x - Unsere kategorialen Daten
+
+###################Output######################## 
+
+Eine Liste mit eine Frequency Tabelle,
+#die die Anzahl für jede Kombination von kategorialem Variable 
+#berechnet und eine Proportionstabelle, 
+#die die Anteile (Prozentsätze) jeder Kategorie berechnet.
+
+################################################# 
+
+
+desk_kategorical <- function(x){
+  
+  frequency <- table(x)
+  proportion <- prop.table(frequency)
+  
+ return(list(Frequency = frequency, 
+              Proportion = proportion))
+}
 
 
 
 #c)
 
+#desk_biv_categorical - Diese Funktion berechnet
+#deskriptive bivariate Statistiken für
+#den Zusammenhang zwischen zwei kategorialen Variablen.
 
+####################Input######################### 
 
+x - x beinhaltet die zwei kategorialen Variablen
 
+###################Output######################### 
+
+Eine bennante Liste mit :
+
+#Frequency - eine Kontingenztafel mit frequencies und margins
+
+#Proportions - eine Kontingenztafel mit Wahrscheinlichkeiten
+und margins
+
+#Chi_sq_Test - Eine Chi-Quadrat-Test der testet, ob zwischen zwei 
+#kategorialen Variablen ein Zusammenhang besteht.
+
+##################################################
+
+desk_biv_categorical <- function(x){
+  
+  frequencies <- addmargins(table(x[,1],x[,2]))
+  
+  proportions <- addmargins(prop.table(table(x[,1],x[,2])))
+  
+  chi_squared <- summary(table(x[,1], x[,2]))
+  
+  return(list(frequencies = frequencies,
+              Proportions = proportions,
+              Chi_sq_Test = chi_squared))
+}
 
 
 #d)
