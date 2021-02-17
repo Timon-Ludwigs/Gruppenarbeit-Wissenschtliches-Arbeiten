@@ -1,3 +1,15 @@
 ######Helferdunktionen:
 
 ####interne Funktionen für Skript 1:
+
+# fuer Aufgabe e) gibt es die Funktion count
+
+count <- function(x, z){
+counter <- 0
+  for(i in 1:length(x)){
+    if(x[i] <= z){
+      counter <- counter + 1
+    }
+  }
+  return(counter)
+}
