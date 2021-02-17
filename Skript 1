@@ -15,7 +15,7 @@ sd <- sd(X)        #berechnet Standardabweichnung von X
 return(data.frame("Minimum"=min,"Maximum"=max,"Mittelwert"=ari,"Median"=med,"Varianz"=var, "Standardabweichung"=sd)) #erstellt Dataframe mit berechneten Werten und gibt diesen aus
 }
 
-
+#######################################################################
 
 #b)
 
@@ -23,30 +23,32 @@ return(data.frame("Minimum"=min,"Maximum"=max,"Mittelwert"=ari,"Median"=med,"Var
 #verschiedene deskriptive Statistiken
 #für kategoriale Variablen.
 
-###################Input######################## 
+######################Input########################### 
 
 x - Unsere kategorialen Daten
 
-###################Output######################## 
+######################Output########################## 
 
-Eine Liste mit eine Frequency Tabelle,
+Eine Liste mit eine Modus, eine Frequency Tabelle,
 #die die Anzahl für jede Kombination von kategorialem Variable 
 #berechnet und eine Proportionstabelle, 
 #die die Anteile (Prozentsätze) jeder Kategorie berechnet.
 
-################################################# 
-
+######################################################
 
 desk_kategorical <- function(x){
   
   frequency <- table(x)
   proportion <- prop.table(frequency)
+  Modus <- Mode(X)
   
- return(list(Frequency = frequency, 
-              Proportion = proportion))
+ return(list("Modus" = Modus,
+              "Frequency" = frequency, 
+              "Proportion" = proportion))
 }
 
 
+#######################################################################
 
 #c)
 
@@ -86,6 +88,9 @@ desk_biv_categorical <- function(x){
 }
 
 
+
+#######################################################################
+
 #d)
 
 
@@ -93,6 +98,7 @@ desk_biv_categorical <- function(x){
 
 
 
+#######################################################################
 
 #e)
 
@@ -107,6 +113,7 @@ func_e <- function(x){ # x ist ein numerischer Vektor
 }
 
 
+#######################################################################
 
 #f)
 
@@ -127,6 +134,9 @@ func_f <- function(x, y, z, v = 0){ # alle Parameter sind Variablen aus dem Date
     barplot(table(v))
   }
 }
+
+
+#######################################################################
 
 ####freiwilliger Zusatz
 
