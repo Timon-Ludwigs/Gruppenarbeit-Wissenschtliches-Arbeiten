@@ -28,14 +28,31 @@
 
 #e)
 
-
-
-
-
+func_e <- function(x){
+  res <- list()
+  res$niedrig <- count(x, quantile(x, 0.33))
+  res$mittel <- count(x, quantile(x, 0.63))
+  res$hoch <- count(x, quantile(x, 1))
+  return(res)
+}
 
 #f)
 
-
+func_f <- function(x, y, z, v = Null){
+  if(v == Null){
+    par(mfrow=c(3,1))
+    hist(x)
+    hist(y)
+    hist(z)
+  }
+  else{
+    par(mfrow=c(2,2))
+    hist(x)
+    hist(y)
+    hist(z)
+    hist(v)
+  }
+}
 
 ####freiwilliger Zusatz
 
