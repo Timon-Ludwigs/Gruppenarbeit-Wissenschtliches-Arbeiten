@@ -13,3 +13,9 @@ counter <- 0
   }
   return(counter)
 }
+
+#In a) verwendet (Mittelwert)
+mean <- function(X){   #erstellt die Funktion mean, welche das arithmetische Mittel berechnen soll
+                       #X ist ein Vektor an Variablen aus dem Datensatz
+   return(sum(X)/length(X))  #addiert alle Werte aus X und teilt diese durch die Anzahl der Variablen und gibt den berechneten Wert aus
+}
