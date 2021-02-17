@@ -1,5 +1,8 @@
 ###Funktionen
 
+# laden der R Datei, mit den noetigen Hilfsfunktionen
+source("Skript 2")
+
 #a)
 
 
@@ -28,14 +31,35 @@
 
 #e)
 
+# mit count als Hilfsfunktion in Skript2
 
-
+func_e <- function(x){
+  res <- list()
+  res$niedrig <- count(x, quantile(x, 0.25))
+  res$mittel <- count(x, quantile(x, 0.75)) - count(x, quantile(x, 0.25))
+  res$hoch <- count(x, quantile(x, 1)) - count(x, quantile(x, 0.75))
+  return(res)
+}
 
 
 
 #f)
 
-
+func_f <- function(x, y, z, v = 0){
+  if(v == 0){
+    par(mfrow=c(3,1))
+    barplot(table(x))
+    barplot(table(y))
+    barplot(table(z))
+  }
+  else{
+    par(mfrow=c(2,2))
+    barplot(table(x))
+    barplot(table(y))
+    barplot(table(z))
+    barplot(table(v))
+  }
+}
 
 ####freiwilliger Zusatz
 
