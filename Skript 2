@@ -2,16 +2,16 @@
 
 ####interne Funktionen für Skript 1:
 
-# fuer Aufgabe e) gibt es die Funktion count
+# fuer Aufgabe e) gibt es die Funktion count. Sie zählt die Werte, die groesser oder gleich dem Eingabeparameter z sind
 
-count <- function(x, z){
+count <- function(x, z){ # x ist ein numerischer Vektor und z eine numerische Zahl
 counter <- 0
-  for(i in 1:length(x)){
-    if(x[i] <= z){
+  for(i in 1:length(x)){ # for schleife, zum durchlaufen des x Vektors
+    if(x[i] <= z){ # falls der betrachtete Wert kleiner oder gleich dem z ist, wird der counter hochgezaehlt
       counter <- counter + 1
     }
   }
-  return(counter)
+  return(counter) # der counter wird zureuckgegeben
 }
 
 #In a) verwendet (Mittelwert)
