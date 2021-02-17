@@ -36,8 +36,8 @@
 
 #f)
 
-func_f <- function(x, y, z, v = Null){
-  if(v == Null){
+func_f <- function(x, y, z, v = 0){
+  if(v == 0){
     par(mfrow=c(3,1))
     hist(x)
     hist(y)
