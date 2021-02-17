@@ -33,9 +33,24 @@
 
 
 
+
 #f)
 
-
+func_f <- function(x, y, z, v = Null){
+  if(v == Null){
+    par(mfrow=c(3,1))
+    hist(x)
+    hist(y)
+    hist(z)
+  }
+  else{
+    par(mfrow=c(2,2))
+    hist(x)
+    hist(y)
+    hist(z)
+    hist(v)
+  }
+}
 
 ####freiwilliger Zusatz
 
