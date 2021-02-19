@@ -3,20 +3,20 @@
 #ID für Person
 ID <- 1:100
 
-Alter
+#Alter
 set.seed(2411) #Ergebnisse reproduzierbar, gleiche Zufallszahlen werden gezogen
 Alter <- rnorm(100,25,2)
 
 #Alter gerundet auf ganze Zahlen?
   Alter <- round(Alter)
 
-Studienfach
+#Studienfach
 Studienfach <- c("Statistik", "DataScience", "Mathe", "Informatik")
 
 #Wahrscheinlichkeiten für Studiengänge
 prob <- c(0.4,0.4,0.05,0.15)
 set.seed(2411) #Ergebnisse reproduzierbar, gleiche Zufallszahlen werden gezogen
-Fach <- sample(Studienfach,100, prob=prob, replace=TRUE)
+Fach <- sample(Studienfach,100, prob=prob, replace=TRUE) 
 
 #Interesse an Mathematik
 MatheInteresse <- numeric(100) #numerischer leerer Vektor mit 100 Einträgen erstellen
