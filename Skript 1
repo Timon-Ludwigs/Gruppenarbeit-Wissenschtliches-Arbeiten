@@ -7,12 +7,15 @@ source("Skript 2")
 a <- function(X){  #X ist ein Vektor an Variablen aus dem Datensatz
 min <- min(X)      #berechnet Minimum von X
 max <- max(X)      #berechnet Maximum von X
-ari <- mean(X)     #berechnet das arithmetische Mittel von X
+ari <- mean(X)     #berechnet das arithmetische Mittel von X  
 var <- var(X)      #berechnet die Varians von X
 med <- median(X)   #berechnet den Median von X
+mod <- Mode(X)     #berechnet Modus von X
 ra <- range(X)     #berechnet Spannweite von X
 sd <- sd(X)        #berechnet Standardabweichnung von X
-return(data.frame("Minimum"=min,"Maximum"=max,"Mittelwert"=ari,"Median"=med,"Varianz"=var, "Standardabweichung"=sd)) #erstellt Dataframe mit berechneten Werten und gibt diesen aus
+u_quartil<- quantile(X, 0.25, names= F) #berechent das untere Quartil von X
+o_quartil<- quantile(X, 0.75, names= F) #berechnet das obere Quartil von X
+return(data.frame("Minimum"=min,"Maximum"=max,"Mittelwert"=ari,"Median"=med,"Varianz"=var, "Standardabweichung"=sd, "Modus"=mod, "unteres Quartil"=u_quartil, "oberes Quartil"=o_quartil)) #erstellt Dataframe mit berechneten Werten und gibt diesen aus
 }
 
 #######################################################################
@@ -29,7 +32,7 @@ x - Unsere kategorialen Daten
 
 ######################Output########################## 
 
-Eine Liste mit eine Modus, eine Frequency Tabelle,
+#Eine Liste mit eine Modus, eine Frequency Tabelle,
 #die die Anzahl für jede Kombination von kategorialem Variable 
 #berechnet und eine Proportionstabelle, 
 #die die Anteile (Prozentsätze) jeder Kategorie berechnet.
@@ -62,12 +65,12 @@ x - x beinhaltet die zwei kategorialen Variablen
 
 ###################Output######################### 
 
-Eine bennante Liste mit :
+#Eine bennante Liste mit :
 
 #Frequency - eine Kontingenztafel mit frequencies und margins
 
 #Proportions - eine Kontingenztafel mit Wahrscheinlichkeiten
-und margins
+#und margins
 
 #Chi_sq_Test - Eine Chi-Quadrat-Test der testet, ob zwischen zwei 
 #kategorialen Variablen ein Zusammenhang besteht.
