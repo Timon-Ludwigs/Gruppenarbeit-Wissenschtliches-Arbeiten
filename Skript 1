@@ -28,7 +28,7 @@ return(data.frame("Minimum"=min,"Maximum"=max,"Mittelwert"=ari,"Median"=med,"Var
 
 ######################Input########################### 
 
-x - Unsere kategorialen Daten
+#x - Unsere kategorialen Daten
 
 ######################Output########################## 
 
@@ -61,7 +61,7 @@ desk_kategorical <- function(x){
 
 ####################Input######################### 
 
-x - x beinhaltet die zwei kategorialen Variablen
+#x - x beinhaltet die zwei kategorialen Variablen
 
 ###################Output######################### 
 
