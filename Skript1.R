@@ -97,7 +97,7 @@ desk_biv_categorical <- function(x){
 #d)
 
 func_d <- function(){
-  # Gruppen erstellen mit Mathe LK ja und nein:
+  # zwei Gruppen der bivariaten Variable erstellen mit Mathe LK ja und nein:
   null <- Datensatz$Alter[Datensatz$MatheLK == 0]
   eins <- Datensatz$Alter[Datensatz$MatheLK == 1]
   
