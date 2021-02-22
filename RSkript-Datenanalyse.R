@@ -6,9 +6,9 @@ library(ggplot2)
 
 #einlesen des data frames
 
-data <- read.csv(file = 'Datensatz.csv')
-source("Skript 1")
-source("Skript 2")
+data <- read.csv(file = 'Datensatz.csv', sep = ";")
+source("Skript1.R")
+source("Skript2.R")
 
 #a)
 #Alter
@@ -40,3 +40,26 @@ Analysis_alter_boxplot <- ggplot(data = data_alter) +
 Analysis_alter_boxplot 
 #auch das boxplot zeigt, der groeßte Teil die Studierednen sind 
 #23 bis 27 jahren alt.
+
+#b) Für Fach
+
+freq_bar_Fach <- as.data.frame(desk_kategorical(data$Fach)$Frequency)
+
+ggplot_freq <- ggplot(freq_bar_Fach, aes(X,Freq)) +
+  geom_bar(stat = "identity") + 
+  geom_hline(yintercept = 42, colour = "blue") + 
+  geom_text(aes(x = "Statistik", y=45), label = "Modus",
+            colour = "Black")
+ggplot_freq
+
+#c)
+
+
+#d)
+
+
+#e)
+
+
+#f)
+
