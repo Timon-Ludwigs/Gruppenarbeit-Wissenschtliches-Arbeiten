@@ -96,10 +96,52 @@ desk_biv_categorical <- function(x){
 
 #d)
 
-
-
-
-
+func_d <- function(){
+  # Gruppen erstellen mit Mathe LK ja und nein:
+  null <- Datensatz$Alter[Datensatz$MatheLK == 0]
+  eins <- Datensatz$Alter[Datensatz$MatheLK == 1]
+  
+  # Minimum und Maximum der beiden Gruppen berechenen:
+  min_null <- min(null)
+  max_null <- max(null)
+  
+  min_eins <- min(eins)
+  max_eins <- max(eins)
+  
+  # Arithmetisches Mittel von den Gruppen:
+  ari_null <- mean(null)
+  ari_eins <- mean(eins)
+  
+  # Spannweite der Gruppen:
+  ra_null <- range(null)
+  ra_eins <- range(eins)
+  
+  # Standardabweichung der Gruppen:
+  sd_null <- sd(null)
+  sd_eins <- sd(eins)
+  
+  # oberes und unteres Quantil der Gruppen:
+  u_quantil_null <- quantile(null, 0.25)
+  o_quantil_null <- quantile(null, 0.75)
+  
+  u_quantil_eins <- quantile(eins, 0.25)
+  o_quantil_eins <- quantile(eins, 0.75)
+  
+  # Rueckgabe ist eine Liste der zuvor berechneten Werte:
+  return(list("Minimum von Gruppe 0" = min_null,
+              "Maximum von Gruppe 0" = max_null,
+              "Minimum von Gruppe 1" = min_eins,
+              "Maximum von Gruppe 1" = max_eins,
+              "Arithm. Mittel von Gruppe 0" = ari_null,
+              "Arithm. Mittel von Gruppe 1" = ari_eins,
+              "Spannweite Gruppe 0" = sd_null,
+              "Spannweite Gruppe 1" = sd_eins,
+              "Unteres Quantil Gruppe 0" = u_quantil_null,
+              "0beres Quantil Gruppe 0" = o_quantil_null,
+              "Unteres Quantil Gruppe 1" = u_quantil_eins,
+              "0beres Quantil Gruppe 1" = o_quantil_eins
+              ))
+}
 
 #######################################################################
 
