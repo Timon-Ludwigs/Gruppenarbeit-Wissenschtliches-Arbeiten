@@ -1,7 +1,7 @@
 ###Funktionen
 
 # laden der R Datei, mit den noetigen Hilfsfunktionen
-source("Skript 2")
+source("Skript2.R")
 
 #a)
 a <- function(X){  #X ist ein Vektor an Variablen aus dem Datensatz
@@ -39,9 +39,9 @@ a <- function(X){  #X ist ein Vektor an Variablen aus dem Datensatz
 
 ######################################################
 
-desk_kategorical <- function(x){
+desk_kategorical <- function(X){
   
-  frequency <- table(x)
+  frequency <- table(X)
   proportion <- prop.table(frequency)
   Modus <- Mode(X)
   
@@ -184,3 +184,4 @@ func_f <- function(x, y, z, v = 0){ # alle Parameter sind Variablen aus dem Date
 #######################################################################
 
 ####freiwilliger Zusatz
+

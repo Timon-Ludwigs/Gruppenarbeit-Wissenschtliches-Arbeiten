@@ -43,8 +43,8 @@ mean <- function(X){   #erstellt die Funktion mean, welche das arithmetische Mit
 
 
 
-Mode = function(x) {
-  ta = table(x)
+Mode = function(X) {
+  ta = table(X)
   
   anzahl = max(ta)
   #Es gibt möglicherweise keinen Modus, wenn kein
@@ -57,7 +57,7 @@ Mode = function(x) {
     #Darüber hinaus können die zurückgegebenen Werte 
     #entweder Zeichen oder Zahlen sein
     
-    if (is.numeric(x)) {
+    if (is.numeric(X)) {
       
       mod = as.numeric(names(ta)[ta == anzahl])
       
