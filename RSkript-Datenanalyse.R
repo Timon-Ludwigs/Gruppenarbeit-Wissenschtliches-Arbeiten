@@ -1,6 +1,10 @@
 #Daten Analyse (Deskription und Visualisierung)
 
 library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(ggmosaic)
+library(reshape2)
 
 #Deskription und Analyse von metrische Variablen
 
@@ -41,6 +45,8 @@ Analysis_alter_boxplot
 #auch das boxplot zeigt, der groeßte Teil die Studierednen sind 
 #23 bis 27 jahren alt.
 
+############################################################################
+
 #b) Für Fach
 
 freq_bar_Fach <- as.data.frame(desk_kategorical(data$Fach)$Frequency)
@@ -52,7 +58,61 @@ ggplot_freq <- ggplot(freq_bar_Fach, aes(X,Freq)) +
             colour = "Black")
 ggplot_freq
 
-#c)
+############################################################################
+
+#c) Deskriptive bivariante Statistiken zw. Mathe Interesse
+#   und Informatik Interesse
+
+#Wir müssen zuerst die Daten entsprechend ordnen, 
+#damit unsere Grafiken sie lesen können
+
+M_I <- factor(data$MatheInteresse, levels = c(4,5,6,7),
+                labels = c("Mittel","Hoch",
+                           "Sehr_Hoch","Höchste"))
+I_I <- factor(data$InfoInteresse, levels = c(1,5,7),
+              labels = c("Sehr Gering","Hoch",
+                         "Höchste"))
+
+table_Math_Info <- 
+  desk_biv_categorical(data.frame(M_I,I_I))$frequencies
+
+#Wir machen es zu einem Data frame, damit ggplot
+#sie annehmen kann
+
+table_Math_Info_df <- as.data.frame(table_Math_Info)
+names(table_Math_Info_df) <- c("Math_Interesse",
+                               "Info_Interesse",
+                               "Frequency")
+
+#Wir erstellen erstmal ein Mosaik plot
+Mosaicplot_Math_Inf <- 
+  ggplot(table_Math_Info_df) +
+  geom_mosaic(
+    aes( weight = Frequency, x = product(Math_Interesse), 
+         fill = Info_Interesse)) + xlab("Math Interesse") + 
+  ylab("Informatik Interesse") + 
+  annotate(geom="text",x=0.55,y=-0.03,
+           label=" Mittel           Hoch         Sehr Hoch            Höchste",
+           color="black",size=3)
+Mosaicplot_Math_Inf
+
+############################################################
+
+#Da die Frequenz bei einem Mosaikplot nicht genau sichtbar ist, 
+#erstellen wir ein Balkendiagramm
+
+Barplot_Math_Inf <- ggplot(table_Math_Info_df, 
+                           aes(x=Math_Interesse, 
+                               y=Frequency,
+                               fill = factor(Info_Interesse))) +
+  geom_bar(stat="identity", position="dodge", colour="black") +
+  scale_fill_brewer(type="qual", palette=1) + 
+  geom_text(aes(label=Frequency), 
+            position=position_dodge(width=0.9), vjust=-0.25)+
+  scale_y_continuous(limits = c(0,45)) + 
+  guides(fill=guide_legend(title="Info_Interesse"))
+  
+Barplot_Math_Inf
 
 
 #d)
