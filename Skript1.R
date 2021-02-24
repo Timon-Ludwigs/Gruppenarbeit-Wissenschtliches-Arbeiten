@@ -79,13 +79,14 @@ desk_kategorical <- function(X){
 
 desk_biv_categorical <- function(x){
   
-  frequencies <- addmargins(table(x[,1],x[,2]))
-  
+  frequencies_marigin <- addmargins(table(x[,1],x[,2]))
+  frequencies_no_margin <- table(x[,1],x[,2])
   proportions <- addmargins(prop.table(table(x[,1],x[,2])))
   
   chi_squared <- summary(table(x[,1], x[,2]))
   
-  return(list(frequencies = frequencies,
+  return(list(frequencies = frequencies_no_margin,
+              freq_with_margin = frequencies_marigin,
               Proportions = proportions,
               Chi_sq_Test = chi_squared))
 }
