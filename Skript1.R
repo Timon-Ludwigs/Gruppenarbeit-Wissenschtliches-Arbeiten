@@ -97,10 +97,12 @@ desk_biv_categorical <- function(x){
 
 #d)
 
-func_d <- function(){
-  # zwei Gruppen der bivariaten Variable erstellen mit Mathe LK ja und nein:
-  null <- Datensatz$Alter[Datensatz$MatheLK == 0]
-  eins <- Datensatz$Alter[Datensatz$MatheLK == 1]
+func_d <- function(x){
+  # zwei Gruppen der bivariaten Variable erstellen 
+  #mit Mathe LK ja und nein:
+  
+  null <- data$Alter[data$MatheLK == 0]
+  eins <- data$Alter[data$MatheLK == 1]
   
   # Minimum und Maximum der beiden Gruppen berechenen:
   min_null <- min(null)
@@ -128,6 +130,14 @@ func_d <- function(){
   u_quantil_eins <- quantile(eins, 0.25)
   o_quantil_eins <- quantile(eins, 0.75)
   
+  #####################################################################
+  #Sei x[1] - eine metrische Variable
+  #Sei x[2] - eine dichotome Variable
+  
+  frequencies_no_margin <- table(x[,1],x[,2])
+  
+  #####################################################################
+  
   # Rueckgabe ist eine Liste der zuvor berechneten Werte:
   return(list("Minimum von Gruppe 0" = min_null,
               "Maximum von Gruppe 0" = max_null,
@@ -140,7 +150,8 @@ func_d <- function(){
               "Unteres Quantil Gruppe 0" = u_quantil_null,
               "0beres Quantil Gruppe 0" = o_quantil_null,
               "Unteres Quantil Gruppe 1" = u_quantil_eins,
-              "0beres Quantil Gruppe 1" = o_quantil_eins
+              "0beres Quantil Gruppe 1" = o_quantil_eins,
+              "Frequency_zw_Met.Dichotom" = frequencies_no_margin
   ))
 }
 
