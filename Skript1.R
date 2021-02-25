@@ -28,7 +28,7 @@ a <- function(X){  #X ist ein Vektor an Variablen aus dem Datensatz
 
 ######################Input########################### 
 
-#x - Unsere kategorialen Daten
+#x - Unsere kategorialen Daten als Data Frame
 
 ######################Output########################## 
 
