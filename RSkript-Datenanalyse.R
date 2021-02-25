@@ -63,7 +63,7 @@ ggplot_freq
 #c) Deskriptive bivariante Statistiken zw. Mathe Interesse
 #   und Informatik Interesse
 
-#Wir müssen zuerst die Daten entsprechend ordnen, 
+#Wir müssen zuerst die Daten entsprechend anpassen & ordnen, 
 #damit unsere Grafiken sie lesen können
 
 M_I <- factor(data$MatheInteresse, levels = c(4,5,6,7),
@@ -114,9 +114,44 @@ Barplot_Math_Inf <- ggplot(table_Math_Info_df,
   
 Barplot_Math_Inf
 
+################################################################################
 
 #d)
 
+#Wir passen zuerst die Daten entsprechend an, 
+#damit unsere Grafiken sie lesen können
+
+Mathe_LK <- factor(data$MatheLK, levels = c(0,1),
+              labels = c("Ja","Nein"))
+data_met_dichotom <- data.frame("Age" = data[,3],Mathe_LK)
+
+#Um eine Idee zu haben, wie die Daten verteilt sind: 
+
+data_met_dichotom <- melt(func_d(data_met_dichotom)$
+                        Frequency_zw_Met.Dichotom)
+names(data_met_dichotom) <- c("Age", "Mathe_LK", "Frequency")
+
+
+#Boxplot erstellen:
+
+box_plot <- ggplot(data = data_met_dichotom,
+                   aes(x=Mathe_LK,y = Age)) + 
+  geom_boxplot()
+box_plot
+
+##################################################################
+
+#Weil wir mit einen Boxplot nichts über die Frequency wissen,
+#erstellen wir auch nich einen Lineplot
+
+
+Lineplot_MathLK_Age <- ggplot(data_met_dichotom, 
+                           aes(x=Age, 
+                               y=Frequency,
+                               group = Mathe_LK)) +
+  geom_line(aes(color=Mathe_LK)) 
+ 
+Lineplot_MathLK_Age
 
 #e)
 
