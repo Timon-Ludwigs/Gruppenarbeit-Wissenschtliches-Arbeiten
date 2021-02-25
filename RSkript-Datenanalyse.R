@@ -123,19 +123,19 @@ Barplot_Math_Inf
 
 Mathe_LK <- factor(data$MatheLK, levels = c(0,1),
               labels = c("Ja","Nein"))
-data_met_dichotom <- data.frame("Age" = data[,3],Mathe_LK)
+d.f <- data.frame("Age" = data[,3],Mathe_LK)
 
 #Um eine Idee zu haben, wie die Daten verteilt sind: 
 
-data_met_dichotom <- melt(func_d(data_met_dichotom)$
+data_met_dichotom <- melt(func_d(d.f)$
                         Frequency_zw_Met.Dichotom)
 names(data_met_dichotom) <- c("Age", "Mathe_LK", "Frequency")
 
 
 #Boxplot erstellen:
 
-box_plot <- ggplot(data = data_met_dichotom,
-                   aes(x=Mathe_LK,y = Age)) + 
+box_plot <- ggplot(data = data,
+                   aes(x=Mathe_LK,y = Alter)) + 
   geom_boxplot()
 box_plot
 
