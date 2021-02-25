@@ -49,6 +49,25 @@ Analysis_alter_boxplot
 
 #b) Für Fach
 
+desk_kategorical(data$Fach)
+#$Modus
+#$Modus$Modus
+#[1] "Statistik"
+#
+#$Modus$Anzahl
+[1] 42
+
+#DataScience  Informatik       Mathe   Statistik 
+         33          18           7          42 
+#$Proportion
+#X
+#DataScience  Informatik       Mathe   Statistik 
+       0.33        0.18        0.07        0.42 
+
+#Die Funktion zeigt uns, dass in dem Datensatz am meisten Statistik Studenten vorhanden sind (siehe Modus und Tabelle). 42% der Studierenden studieren Statistik.
+#Danach folgen die Date Science Studierenden mit 33% (33 Studierende). Informatik studieren 18% (18 Studierende). Am wenigsten vetreten sind Mathe Studenten mit 7% (7 Studierende).
+
+#Zur Visualisierung:
 freq_bar_Fach <- as.data.frame(desk_kategorical(data$Fach)$Frequency)
 
 ggplot_freq <- ggplot(freq_bar_Fach, aes(X,Freq)) +
