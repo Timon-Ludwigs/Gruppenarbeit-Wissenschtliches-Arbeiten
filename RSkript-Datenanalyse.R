@@ -55,19 +55,24 @@ desk_kategorical(data$Fach)
 #[1] "Statistik"
 #
 #$Modus$Anzahl
-[1] 42
+#[1] 42
 
 #DataScience  Informatik       Mathe   Statistik 
-         33          18           7          42 
+#        33          18           7          42 
 #$Proportion
 #X
 #DataScience  Informatik       Mathe   Statistik 
-       0.33        0.18        0.07        0.42 
+#      0.33        0.18        0.07        0.42 
 
-#Die Funktion zeigt uns, dass in dem Datensatz am meisten Statistik Studenten vorhanden sind (siehe Modus und Tabelle). 42% der Studierenden studieren Statistik.
-#Danach folgen die Date Science Studierenden mit 33% (33 Studierende). Informatik studieren 18% (18 Studierende). Am wenigsten vetreten sind Mathe Studenten mit 7% (7 Studierende).
+#Die Funktion zeigt uns, dass in dem Datensatz am meisten Statistik
+#Studenten vorhanden sind (siehe Modus und Tabelle). 42% der 
+#Studierenden studieren Statistik. Danach folgen die 
+#Date Science Studierenden mit 33% (33 Studierende). 
+#Informatik studieren 18% (18 Studierende). Am wenigsten 
+#vetreten sind Mathe Studenten mit 7% (7 Studierende).
 
 #Zur Visualisierung:
+
 freq_bar_Fach <- as.data.frame(desk_kategorical(data$Fach)$Frequency)
 
 ggplot_freq <- ggplot(freq_bar_Fach, aes(X,Freq)) +
@@ -174,6 +179,49 @@ Lineplot_MathLK_Age
 
 #e)
 
+func_e(data$InfoInteresse)
+
+#Result:
+
+#$niedrig  $mittel  $hoch 
+#[1] 40    [1] 60   [1] 0
+
+#Wir sehen hier, dass die Liste nicht wirklich die 
+#richtige Werte zurückgeben, weil die Quantile Funktionen
+#von Skript1.R es anders berechnet als gewünscht.
+
+#Daher ist eine bessere Variante(func_e_besser) mit der 
+#cut(), table() und factor() Funktion erstellt und gezeigt hier.
+
+func_e_besser(data$InfoInteresse)
+func_e_besser(data$InfoInteresse)$Table
+
+#Result:
+#Gering Mittel   Hoch 
+#     7     33     60 
+
+#Analyse: Wir sehen hier nämlich, dass die Meisten
+#Studierende in unserem Datensatz(60%) generall ein
+#Hohes Interesse an Informatik haben. 33 Studierende
+#haben eine mittlere Interesse und nur 7 von 100 
+#Studenten haben kein großes Interesse an Informatik.
 
 #f)
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
