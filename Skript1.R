@@ -197,3 +197,15 @@ func_f <- function(x, y, z, v = 0){ # alle Parameter sind Variablen aus dem Date
 
 ####freiwilliger Zusatz
 
+func_e_besser <- function(x){
+  #Zunächst teilen wir die Daten in 3 gleiche Intervalle
+  Factorise <- factor(cut(x,3,include.lowest = TRUE),
+                      labels = c("Gering","Mittel","Hoch"))
+  #Hier erfahren wir, wie viele Werte unter jede Kategorie fallen.
+  table_category <- table("Frequency" = Factorise)
+
+  
+  return(list("kategorisierte Data" = Factorise,
+              "Table" = table_category))
+}
+
