@@ -119,6 +119,12 @@ Mosaicplot_Math_Inf <-
            label=" Mittel           Hoch         Sehr Hoch            Höchste",
            color="black",size=3)
 Mosaicplot_Math_Inf
+#das mosaikplot soll den zusammenhang zwischen der interesse an mathe und informatik messen und wiedergeben.
+#es stellt sich heraus, dass die wenigsten studierenedne hohe interesse an mathe und zugleich sehr geringe
+#interesse an informatik haben. studierenden mit mittlmäßiger interesse an mathe haben hohe interesse an info.
+#bei sehr hohen interesse an mathe ist auch die informatik affinität am größten.außerdem ist bei
+#höchster interesse an mathe auch die höchste interesse an info zu sehen.
+
 
 ############################################################
 
@@ -137,6 +143,14 @@ Barplot_Math_Inf <- ggplot(table_Math_Info_df,
   guides(fill=guide_legend(title="Info_Interesse"))
   
 Barplot_Math_Inf
+#dieses barplot drückt in relativen zaheln die intresse der studierenden im fach informatik in
+#abhängikeit der interesse in mathe aus. 
+#dabei haben 33 Studierenden mit mittlmäßiges Intreresse an mathe eine hohe interesse an info.
+#nur 7 studierende mit hoher begeisterung für mathe haben ein geringes interesse für info.
+#42 studierende haben ein sehr hohe interesse für mathe und info.der rest (18 studierende) weist die höchste
+#intresse in beiden fächern auf.
+#es lässt sich also sagen, dass die meisten studierenden die mittelmäßiges bis hohe interesse 
+#an mathe haben, auch eine hohe interesse in info haben.
 
 ################################################################################
 
