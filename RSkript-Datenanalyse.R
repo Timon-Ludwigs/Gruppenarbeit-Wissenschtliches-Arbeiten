@@ -273,10 +273,7 @@ data_four_variables <- cbind(data_three_variables,MatheLK)
 
 func_f(data_four_variables)
 
-#Analyse:
-#Erste Grafik:
-#Die Verteilung des Fachs kennen wir bereits aus der Funktion a. Wir erkennen, dass das Mathe Interess
-
+#Die hier entstandenen Grafiken zeigen die Verteilungen, die wir bereits vorher erkennen konnten.
 
 
 
