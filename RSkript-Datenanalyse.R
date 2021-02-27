@@ -120,7 +120,7 @@ Mosaicplot_Math_Inf <-
            label=" Mittel           Hoch         Sehr Hoch            Höchste",
            color="black",size=3)
 Mosaicplot_Math_Inf
-#Ergebnis:Das Mosaikplot soll den Zusammenhang zwischen das Interesse an Mathe und Informatik messen und wiedergeben.
+#Ergebnis: Der Mosaikplot soll den Zusammenhang zwischen dem Interesse an Mathe und Informatik messen und wiedergeben.
 #Es stellt sich heraus, dass die wenigsten Studierenden hohes Interesse an Mathe und zugleich sehr geringes
 #Interesse an Informatik haben. Studierenden mit mittlmäßiger Interesse an Mathe haben hohe Interesse an Info.
 #Bei sehr hohem Interesse an Mathe ist auch die Informatik Affinität am größten. Außerdem ist bei
@@ -144,8 +144,8 @@ Barplot_Math_Inf <- ggplot(table_Math_Info_df,
   guides(fill=guide_legend(title="Info_Interesse"))
   
 Barplot_Math_Inf
-#Ergebnis :Dieses Barplot drückt in Zaheln das Intresse der Studierenden im Fach Informatik in
-#Abhängikeit dem Interesse in Mathe aus. 
+#Ergebnis: Dieser Barplot drückt in Zahlen das Intresse der Studierenden im Fach Informatik in
+#Abhängikeit mit dem Interesse in Mathe aus. 
 #Dabei haben 33 Studierenden mit mittlmäßiges Intreresse an Mathe eine hohes Interesse an Info.
 #Nur 7 Studierende mit hoher Begeisterung für Mathe haben ein geringes Interesse für Info.
 #42 Studierende haben ein sehr hohes Interesse für Mathe und Info. Der Rest (18 Studierende) weist die höchste
@@ -178,7 +178,7 @@ box_plot <- ggplot(data = data,
                    aes(x=Mathe_LK,y = Alter)) + 
   geom_boxplot()
 box_plot
-#Ergenis:Das Boxplot zeigt das Alters der Studierenden, die Mathe lk belegt hatten oder nicht.
+#Ergenis: Der Boxplot zeigt das Alters der Studierenden, die Mathe lk belegt hatten oder nicht.
 #Der Median, des 'Nein' Boxplotes, liegt etwas unter 24 Jahren.Das obere Quartil liegt bei ca.
 #27 Jahren und das untere Quartil bei ca. 23 Jahren. Die/der jüngste/r Befragte, ist 21 Jahre alt.
 #Die/der Älteste ist 28 Jahre alt.
@@ -239,6 +239,7 @@ func_e_besser(data$InfoInteresse)$Table
 
 #f)
 
+#Um nochmal einen Überblick über alle Verteilungen zu bekommen wenden wir die Funktion aus f an.
 #Drei Variablen
 #Wir werden zunächst Fach, Interesse an Mathematik
 #und Interesse an Informatik visualisieren. Wir geben
@@ -273,7 +274,8 @@ data_four_variables <- cbind(data_three_variables,MatheLK)
 func_f(data_four_variables)
 
 #Analyse:
-
+#Erste Grafik:
+#Die Verteilung des Fachs kennen wir bereits aus der Funktion a. Wir erkennen, dass das Mathe Interess
 
 
 
