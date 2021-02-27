@@ -119,11 +119,11 @@ Mosaicplot_Math_Inf <-
            label=" Mittel           Hoch         Sehr Hoch            Höchste",
            color="black",size=3)
 Mosaicplot_Math_Inf
-#das mosaikplot soll den zusammenhang zwischen der interesse an mathe und informatik messen und wiedergeben.
-#es stellt sich heraus, dass die wenigsten studierenedne hohe interesse an mathe und zugleich sehr geringe
-#interesse an informatik haben. studierenden mit mittlmäßiger interesse an mathe haben hohe interesse an info.
-#bei sehr hohen interesse an mathe ist auch die informatik affinität am größten.außerdem ist bei
-#höchster interesse an mathe auch die höchste interesse an info zu sehen.
+#Ergebnis:Das Mosaikplot soll den Zusammenhang zwischen das Interesse an Mathe und Informatik messen und wiedergeben.
+#Es stellt sich heraus, dass die wenigsten Studierenden hohes Interesse an Mathe und zugleich sehr geringes
+#Interesse an Informatik haben. Studierenden mit mittlmäßiger Interesse an Mathe haben hohe Interesse an Info.
+#Bei sehr hohem Interesse an Mathe ist auch die Informatik Affinität am größten. Außerdem ist bei
+#höchster Interesse an Mathe auch die höchste Interesse an Info zu sehen.
 
 
 ############################################################
@@ -143,14 +143,14 @@ Barplot_Math_Inf <- ggplot(table_Math_Info_df,
   guides(fill=guide_legend(title="Info_Interesse"))
   
 Barplot_Math_Inf
-#dieses barplot drückt in relativen zaheln die intresse der studierenden im fach informatik in
-#abhängikeit der interesse in mathe aus. 
-#dabei haben 33 Studierenden mit mittlmäßiges Intreresse an mathe eine hohe interesse an info.
-#nur 7 studierende mit hoher begeisterung für mathe haben ein geringes interesse für info.
-#42 studierende haben ein sehr hohe interesse für mathe und info.der rest (18 studierende) weist die höchste
-#intresse in beiden fächern auf.
-#es lässt sich also sagen, dass die meisten studierenden die mittelmäßiges bis hohe interesse 
-#an mathe haben, auch eine hohe interesse in info haben.
+#Ergebnis :Dieses Barplot drückt in Zaheln das Intresse der Studierenden im Fach Informatik in
+#Abhängikeit dem Interesse in Mathe aus. 
+#Dabei haben 33 Studierenden mit mittlmäßiges Intreresse an Mathe eine hohes Interesse an Info.
+#Nur 7 Studierende mit hoher Begeisterung für Mathe haben ein geringes Interesse für Info.
+#42 Studierende haben ein sehr hohes Interesse für Mathe und Info. Der Rest (18 Studierende) weist die höchste
+#Intresse in beiden Fächern auf.
+#Es lässt sich also sagen, dass die meisten Studierenden die mittelmäßiges bis hohe Interesse 
+#an Mathe haben, auch ein hohes Interesse in Info haben.
 
 ################################################################################
 
@@ -176,6 +176,15 @@ box_plot <- ggplot(data = data,
                    aes(x=Mathe_LK,y = Alter)) + 
   geom_boxplot()
 box_plot
+#Ergenis:Das Boxplot zeigt das Alters der Studierenden, die Mathe lk belegt hatten oder nicht.
+#Der Median, des 'Nein' Boxplotes, liegt etwas unter 24 Jahren.Das obere Quartil liegt bei ca.
+#27 Jahren und das untere Quartil bei ca. 23 Jahren. Die/der jüngste/r Befragte, ist 21 Jahre alt.
+#Die/der Älteste ist 28 Jahre alt.
+#Der Median, des 'Ja' Boxplotes, liegt bei 25 Jahren.Das obere Quartil liegt auch bei ca.27 Jahren 
+#und das untere Quartil liegt ungefähr bei 23 Jahren. Die/der jüngste/r Befragte, ist 18 Jahre alt.
+#Die/der Älteste ist etwa 31 Jahre alt.
+#Also ist die Range bei den Studierenden, die Mathe lk belegt hatten größer als jene, die dies
+#nicht belegt hatten.
 
 ##################################################################
 
@@ -190,6 +199,12 @@ Lineplot_MathLK_Age <- ggplot(data_met_dichotom,
   geom_line(aes(color=Mathe_LK)) 
  
 Lineplot_MathLK_Age
+#Ergebnis:Diese Grafik beschreibt die Häufigkeit der Befragten, die Mathe lk hatten oder nicht.
+#Etwa 3 der 23 jährigen und 3 der 27 jährigen haben mit Nein geantwortet. Diese sind zugelich auch am häufigste
+#mit nein geantwortet. Außerdem sind im Bereich von 19-22 Jahren 1-2 Befragte dabei, die kein Mathe lk hatten.
+#Die meisten Befragten (ca.17), die Mathe lk hatten, sind 25 Jahre alt. Auch im Alter von 23 Jahren und 27 Jahren
+#beantworteten 15 bzw. 12 Personen die Frage mit 'Ja'. 
+#Es scheint also, dass die meisten Studierenden Mathe lk belegt hatten.
 
 #e)
 
