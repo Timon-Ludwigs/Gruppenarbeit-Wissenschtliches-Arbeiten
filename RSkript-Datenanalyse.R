@@ -5,6 +5,7 @@ library(dplyr)
 library(tidyverse)
 library(ggmosaic)
 library(reshape2)
+library(ggpubr)
 
 #Deskription und Analyse von metrische Variablen
 
@@ -162,6 +163,7 @@ Barplot_Math_Inf
 Mathe_LK <- factor(data$MatheLK, levels = c(0,1),
               labels = c("Nein","Ja"))
 d.f <- data.frame("Age" = data[,3],Mathe_LK)
+
 
 #Um eine Idee zu haben, wie die Daten verteilt sind: 
 
