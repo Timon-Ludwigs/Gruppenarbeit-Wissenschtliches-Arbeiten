@@ -160,7 +160,7 @@ Barplot_Math_Inf
 #damit unsere Grafiken sie lesen können
 
 Mathe_LK <- factor(data$MatheLK, levels = c(0,1),
-              labels = c("Ja","Nein"))
+              labels = c("Nein","Ja"))
 d.f <- data.frame("Age" = data[,3],Mathe_LK)
 
 #Um eine Idee zu haben, wie die Daten verteilt sind: 
@@ -222,13 +222,40 @@ func_e_besser(data$InfoInteresse)$Table
 
 #f)
 
-  
+#Drei Variablen
+#Wir werden zunächst Fach, Interesse an Mathematik
+#und Interesse an Informatik visualisieren. Wir geben
+#Input als eine Data Frame
 
+#######################Data vorbereiten#########################################
+data_three_variables <- data[c(4,5,6)]
+data_three_variables$Fach <- as.character(data_three_variables$Fach)
+data_three_variables[data_three_variables == "DataScience"]<-"D.S."
+data_three_variables[data_three_variables == "Informatik"] <- "Inf."
+data_three_variables[data_three_variables == "Statistik"] <- "Stat."
+data_three_variables$Fach <- as.factor(data_three_variables$Fach)
+#All dies musste ich zuerst machen, damit die Labels auf der
+#x-Achse sich nicht überschneiden. 
 
+#############################################################################
 
+#Visualisierung
+func_f(data_three_variables)
 
+#Vier Variablen
+#Wir fügen hier auch MatheLK hinzu:
 
+########################Data vorbereiten#######################################
 
+MatheLK <- data$MatheLK
+data_four_variables <- cbind(data_three_variables,MatheLK)
+
+###############################################################################
+#Visualisierung
+
+func_f(data_four_variables)
+
+#Analyse:
 
 
 

@@ -174,25 +174,84 @@ func_e <- function(x){ # x ist ein numerischer Vektor
 
 #f)
 
-func_f <- function(x, y, z, v = 0){ # alle Parameter sind Variablen aus dem Datensatz. v wird als default auf 0 gesetzt. Falls nun 4 Variablen genutzt werden sollen, wird v auf die entsprechende Variable gesetzt
-  if(v == 0){ # prueft, ob fuer v eine Variable uebergeben wurde und fuehrt die nachfolgenden Zeilen aus, falls dies nicht so ist
-    par(mfrow=c(3,1)) # Erzeugt drei barplots, die untereinander stehen
-    # im folgenden werden die Barplots fuer die Variablen berechnet
-    barplot(table(x))
-    barplot(table(y))
-    barplot(table(z))
+func_f <- function(x){
+  
+  #Es wird hier vorausgesetzt, dass eine Data Frame
+  #als Parameter angegeben wird.
+  
+  namess <- names(x)
+  
+  #Wir erzeugen eine Frequency Tabelle hier
+  List <- apply(x,2,table)
+  
+  #1.Variable 
+  
+  d.f_first <- as.data.frame(List[1])
+  #Die erste Variable(eine Tabelle) wird dann zu einem
+  #Data Frame gemacht
+  
+  #Hier wird unsere erste Grafik erzeugt und es wird
+  #analog auch bei den anderen Variablen gemacht.
+  p <- ggplot(data = d.f_first, aes(x = d.f_first[,1])) + 
+    geom_bar(aes(y = d.f_first[,2],
+                 fill = d.f_first[,1]),
+             show.legend = FALSE,
+             stat = 'identity',
+             position = 'dodge') + 
+    xlab(names(x)[1]) +
+    ylab("Freq")
+  
+  #2.Variable
+  
+  d.f_second <- as.data.frame(List[2])
+  
+  q <- ggplot(data = d.f_second, aes(x = d.f_second[,1])) + 
+    geom_bar(aes(y = d.f_second[,2],
+                 fill = d.f_second[,1]),
+             show.legend = FALSE,
+             stat = 'identity',
+             position = 'dodge') +
+    xlab(names(x)[2]) +
+    ylab("Freq")  
+  
+  #3.Variable
+  d.f_third <- as.data.frame(List[3])
+  
+  r <- ggplot(data = d.f_third, aes(x = d.f_third[,1])) + 
+    geom_bar(aes(y = d.f_third[,2],
+                 fill = d.f_third[,1]),
+             show.legend = FALSE,
+             stat = 'identity',
+             position = 'dodge')  +
+    xlab(names(x)[3]) +
+    ylab("Freq")
+  
+  combine <- ggarrange(p,q,r,
+                       ncol = 2, nrow = 2)
+  
+  if(length(x) == 4){
+    
+    #4.Variable
+    
+    d.f_fourth <- as.data.frame(List[4])
+    
+    s <- ggplot(data = d.f_fourth, aes(x = d.f_fourth[,1])) + 
+      geom_bar(aes(y = d.f_fourth[,2],
+                   fill = d.f_fourth[,1]),
+               show.legend = FALSE,
+               stat = 'identity',
+               position = 'dodge')  + 
+      xlab(names(x)[4]) + 
+      ylab("Freq")
+    
+    combine <- ggarrange(p,q,r,s,
+                         ncol = 2, 
+                         nrow = 2)
   }
-  else{ # falls fuer v ein anderer Wert als 0, also eine Variable uebergeben wurde werden die Nachfolgenden Zeilen ausgefuehrt
-    par(mfrow=c(2,2)) # Erzeugt vier barplots, die im 2 x 2 angeordnet sind
-    # im folgenden werden die Barplots fuer die Variablen berechnet
-    barplot(table(x))
-    barplot(table(y))
-    barplot(table(z))
-    barplot(table(v))
-  }
+  
+  return(combine)
+  
 }
-
-
 #######################################################################
 
 ####freiwilliger Zusatz
@@ -209,3 +268,4 @@ func_e_besser <- function(x){
               "Table" = table_category))
 }
 
+  
