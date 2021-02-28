@@ -3,7 +3,7 @@ Gruppenarbeit für die Veranstaltung "Wissenschaftliches Arbeiten"
 
 
 Teammitglieder:
-Joshua,
+Joshua Thejas Puli,
 Niruban Inthunesan,
 Melissa,
 Timon,
