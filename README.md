@@ -5,9 +5,9 @@ Gruppenarbeit für die Veranstaltung "Wissenschaftliches Arbeiten"
 Teammitglieder:
 Joshua Thejas Puli,
 Niruban Inthunesan,
-Melissa,
+Melissa Waldmann,
 Timon,
-Josepha
+Josepha Kuhn
 
 Aufgaben:
 1) Datensatz simulieren mit verschiedenen Variablen (Gruppenarbeit.R) 
