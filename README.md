@@ -4,7 +4,7 @@ Gruppenarbeit für die Veranstaltung "Wissenschaftliches Arbeiten"
 
 Teammitglieder:
 Joshua,
-Niruban,
+Niruban Inthunesan,
 Melissa,
 Timon,
 Josepha
