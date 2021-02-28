@@ -1,5 +1,11 @@
 ######Helferfunktionen:
 
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(ggmosaic)
+library(reshape2)
+library(ggpubr)
 ####interne Funktionen für Skript 1:
 
 # fuer Aufgabe e) gibt es die Funktion count. Sie zählt die Werte, die groesser oder gleich dem Eingabeparameter z sind

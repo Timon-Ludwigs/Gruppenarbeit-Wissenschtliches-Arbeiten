@@ -1,5 +1,11 @@
 ###Funktionen
 
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(ggmosaic)
+library(reshape2)
+library(ggpubr)
 # laden der R Datei, mit den noetigen Hilfsfunktionen
 source("Skript2.R")
 
