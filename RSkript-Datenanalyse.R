@@ -38,13 +38,15 @@ Analysis_alter_hist <- ggplot(data = data_alter) +
   geom_histogram( aes(x = Alter), binwidth = 1) + 
   geom_vline(xintercept = data_alter$Mittelwert, colour = "blue") 
 Analysis_alter_hist
-#das histogramm zeigt, dass die hoehste Anzahl an Studierenden im Alter von 23 und 25 Jahren sind. 
+#Ergebnis: Das Histogramm zeigt, dass die hoehste Anzahl(ca. 36) an Studierenden im Alter von 23 
+#und 25 Jahren sind. Außerdem sind 32 Befragte etwa 27 Jahre alt.
 
 Analysis_alter_boxplot <- ggplot(data = data_alter) + 
   geom_boxplot(aes(x = Alter))
 Analysis_alter_boxplot 
-#auch das boxplot zeigt, der groeßte Teil die Studierednen sind 
-#23 bis 27 jahren alt.
+#Ergebnis: Auch das Boxplot zeigt, der groeßte Teil die Studierenden sind 
+#23 bis 27 jahren alt.Das untere Quartil liegt bei 23 Jahren und das obere 
+#Quartil leigt bei 27 Jahren.
 
 ############################################################################
 
@@ -120,7 +122,7 @@ Mosaicplot_Math_Inf <-
            label=" Mittel           Hoch         Sehr Hoch            Höchste",
            color="black",size=3)
 Mosaicplot_Math_Inf
-#Ergebnis: Der Mosaikplot soll den Zusammenhang zwischen dem Interesse an Mathe und Informatik messen und wiedergeben.
+#Ergebnis: Das Mosaikplot soll den Zusammenhang zwischen dem Interesse an Mathe und Informatik messen und wiedergeben.
 #Es stellt sich heraus, dass die wenigsten Studierenden hohes Interesse an Mathe und zugleich sehr geringes
 #Interesse an Informatik haben. Studierenden mit mittlmäßiger Interesse an Mathe haben hohe Interesse an Info.
 #Bei sehr hohem Interesse an Mathe ist auch die Informatik Affinität am größten. Außerdem ist bei
@@ -144,7 +146,7 @@ Barplot_Math_Inf <- ggplot(table_Math_Info_df,
   guides(fill=guide_legend(title="Info_Interesse"))
   
 Barplot_Math_Inf
-#Ergebnis: Dieser Barplot drückt in Zahlen das Intresse der Studierenden im Fach Informatik in
+#Ergebnis: Dieses Barplot drückt in Zahlen das Intresse der Studierenden im Fach Informatik in
 #Abhängikeit mit dem Interesse in Mathe aus. 
 #Dabei haben 33 Studierenden mit mittlmäßiges Intreresse an Mathe eine hohes Interesse an Info.
 #Nur 7 Studierende mit hoher Begeisterung für Mathe haben ein geringes Interesse für Info.
@@ -178,7 +180,7 @@ box_plot <- ggplot(data = data,
                    aes(x=Mathe_LK,y = Alter)) + 
   geom_boxplot()
 box_plot
-#Ergenis: Der Boxplot zeigt das Alters der Studierenden, die Mathe lk belegt hatten oder nicht.
+#Ergenis: Das Boxplot zeigt das Alters der Studierenden, die Mathe lk belegt hatten oder nicht.
 #Der Median, des 'Nein' Boxplotes, liegt etwas unter 24 Jahren.Das obere Quartil liegt bei ca.
 #27 Jahren und das untere Quartil bei ca. 23 Jahren. Die/der jüngste/r Befragte, ist 21 Jahre alt.
 #Die/der Älteste ist 28 Jahre alt.
