@@ -6,7 +6,7 @@ Teammitglieder:
 Joshua Thejas Puli,
 Niruban Inthunesan,
 Melissa Waldmann,
-Timon,
+Timon Ludwigs,
 Josepha Kuhn
 
 Aufgaben:
